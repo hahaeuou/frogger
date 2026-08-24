@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cur8alfwjd6y4"]
+
+[ext_resource type="Texture2D" uid="uid://d0k1m0ssqbkyw" path="res://icon.svg" id="1_uqtb4"]
+
+[node name="SafeLane" type="Node2D" unique_id=1773413230]
+metadata/_edit_horizontal_guides_ = [32.0]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=627886379]
+self_modulate = Color(1, 1, 1, 0.24705882)
+position = Vector2(256, 16)
+scale = Vector2(4, 0.25)
+texture = ExtResource("1_uqtb4")

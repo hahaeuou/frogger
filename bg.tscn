@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://c7fy62ypy44af"]
+
+[ext_resource type="Texture2D" uid="uid://d0k1m0ssqbkyw" path="res://icon.svg" id="1_t4gw0"]
+[ext_resource type="PackedScene" uid="uid://cu7xjntjld3h4" path="res://player.tscn" id="2_tuaf8"]
+[ext_resource type="PackedScene" uid="uid://cur8alfwjd6y4" path="res://safe_lane.tscn" id="3_e8j8q"]
+[ext_resource type="PackedScene" uid="uid://dkk2nbs5ud8p0" path="res://car_lane.tscn" id="5_36ycx"]
+[ext_resource type="PackedScene" uid="uid://bcgiskj8kek7x" path="res://log.tscn" id="6_7sudn"]
+[ext_resource type="PackedScene" uid="uid://bl08jnver5s35" path="res://water_lane.tscn" id="6_plmvg"]
+[ext_resource type="PackedScene" uid="uid://c3uxnlgw4sfoh" path="res://turtle.tscn" id="7_7sudn"]
+
+[node name="Node2D" type="Node2D" unique_id=1223438131]
+
+[node name="BG" type="Node2D" parent="." unique_id=1134271130]
+
+[node name="Sprite2D" type="Sprite2D" parent="BG" unique_id=855578389]
+self_modulate = Color(1, 1, 1, 0.24705882)
+position = Vector2(256, 208)
+scale = Vector2(4, 3.25)
+texture = ExtResource("1_t4gw0")
+
+[node name="CharacterBody2D" parent="." unique_id=1418854738 instance=ExtResource("2_tuaf8")]
+z_index = 1
+position = Vector2(256, 400)
+
+[node name="Lanes" type="Node2D" parent="." unique_id=9699310]
+
+[node name="SafeLane" parent="Lanes" unique_id=1773413230 instance=ExtResource("3_e8j8q")]
+position = Vector2(0, 384)
+
+[node name="CarLane" parent="Lanes" unique_id=580544289 instance=ExtResource("5_36ycx")]
+position = Vector2(0, 352)
+car_speed = 256.0
+
+[node name="CarLane2" parent="Lanes" unique_id=1518652653 instance=ExtResource("5_36ycx")]
+position = Vector2(0, 320)
+lane_direction = true
+car_speed = 216.0
+
+[node name="CarLane3" parent="Lanes" unique_id=1842293195 instance=ExtResource("5_36ycx")]
+position = Vector2(0, 288)
+car_speed = 150.0
+
+[node name="CarLane4" parent="Lanes" unique_id=249211410 instance=ExtResource("5_36ycx")]
+position = Vector2(0, 256)
+lane_direction = true
+car_speed = 290.0
+
+[node name="CarLane5" parent="Lanes" unique_id=419853130 instance=ExtResource("5_36ycx")]
+position = Vector2(0, 224)
+car_speed = 234.0
+
+[node name="SafeLane2" parent="Lanes" unique_id=1549763678 instance=ExtResource("3_e8j8q")]
+position = Vector2(0, 192)
+
+[node name="WaterLane" parent="Lanes" unique_id=587052361 instance=ExtResource("6_plmvg")]
+position = Vector2(0, 160)
+lane_direction = true
+object_speed = 210.0
+scene = ExtResource("6_7sudn")
+
+[node name="WaterLane2" parent="Lanes" unique_id=886260034 instance=ExtResource("6_plmvg")]
+position = Vector2(0, 128)
+object_speed = 138.0
+turtle_lane = true
+scene = ExtResource("7_7sudn")
+
+[node name="WaterLane3" parent="Lanes" unique_id=1799581477 instance=ExtResource("6_plmvg")]
+position = Vector2(0, 96)
+lane_direction = true
+object_speed = 256.0
+scene = ExtResource("6_7sudn")
+
+[node name="WaterLane4" parent="Lanes" unique_id=1735013223 instance=ExtResource("6_plmvg")]
+position = Vector2(0, 64)
+object_speed = 254.0
+turtle_lane = true
+scene = ExtResource("7_7sudn")
+
+[node name="WaterLane5" parent="Lanes" unique_id=3017178 instance=ExtResource("6_plmvg")]
+position = Vector2(0, 32)
+lane_direction = true
+object_speed = 180.0
+scene = ExtResource("6_7sudn")
+
+[node name="SafeLane3" parent="Lanes" unique_id=2069555292 instance=ExtResource("3_e8j8q")]

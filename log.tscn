@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bcgiskj8kek7x"]
+
+[ext_resource type="Script" uid="uid://ykmy3eilvxap" path="res://log.gd" id="1_a0a2b"]
+[ext_resource type="Texture2D" uid="uid://d0k1m0ssqbkyw" path="res://icon.svg" id="2_vgnok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoj53"]
+size = Vector2(48, 24)
+
+[node name="Log" type="Area2D" unique_id=834715089 groups=["logs"]]
+collision_layer = 4
+script = ExtResource("1_a0a2b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=908843651]
+scale = Vector2(0.375, 0.1875)
+texture = ExtResource("2_vgnok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2109818445]
+shape = SubResource("RectangleShape2D_uoj53")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1284084621]
+rect = Rect2(-24, -12, 48, 24)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

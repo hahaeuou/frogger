@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dkk2nbs5ud8p0"]
+
+[ext_resource type="Script" uid="uid://3v0jp0f1m0rc" path="res://car_lane.gd" id="1_hry1w"]
+[ext_resource type="Texture2D" uid="uid://d0k1m0ssqbkyw" path="res://icon.svg" id="2_sclk6"]
+[ext_resource type="Script" uid="uid://bcq42g64rlr3f" path="res://car_lane_timer.gd" id="3_d5vq2"]
+
+[node name="CarLane" type="Node2D" unique_id=580544289]
+script = ExtResource("1_hry1w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2035369773]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(256, 16)
+scale = Vector2(4, 0.25)
+texture = ExtResource("2_sclk6")
+
+[node name="Timer" type="Timer" parent="." unique_id=2014099598]
+script = ExtResource("3_d5vq2")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

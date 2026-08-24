@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bl08jnver5s35"]
+
+[ext_resource type="Script" uid="uid://bnfnm8txqqup3" path="res://water_lane.gd" id="1_4kkou"]
+[ext_resource type="Texture2D" uid="uid://d0k1m0ssqbkyw" path="res://icon.svg" id="2_ttpo6"]
+[ext_resource type="Script" uid="uid://bcq42g64rlr3f" path="res://car_lane_timer.gd" id="3_24dbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enc2m"]
+size = Vector2(512, 28)
+
+[node name="WaterLane" type="Node2D" unique_id=580544289]
+script = ExtResource("1_4kkou")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2035369773]
+self_modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(256, 16)
+scale = Vector2(4, 0.25)
+texture = ExtResource("2_ttpo6")
+
+[node name="Timer" type="Timer" parent="." unique_id=2014099598]
+script = ExtResource("3_24dbp")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=498987586 groups=["water"]]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=951786005]
+position = Vector2(256, 16)
+shape = SubResource("RectangleShape2D_enc2m")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
